@@ -1,1 +1,1 @@
-# three-sixty-wordpress-plugin
+# Three Sixty Image slider Wordpress Plugin

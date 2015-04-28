@@ -1,0 +1,26 @@
+{
+  "name": "three-sixty-wordpress-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "gulp": "^3.8.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SeoFood/three-sixty-wordpress-plugin.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeoFood/three-sixty-wordpress-plugin/issues"
+  },
+  "homepage": "https://github.com/SeoFood/three-sixty-wordpress-plugin"
+}

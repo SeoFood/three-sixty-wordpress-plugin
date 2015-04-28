@@ -1,0 +1,19 @@
+{
+  "name": "three-sixty-wordpress-plugin",
+  "version": "1.0",
+  "homepage": "https://github.com/SeoFood/three-sixty-wordpress-plugin",
+  "authors": [
+    "Marco Hillger <marco@seofood.de>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "threesixty-slider": "~2.0.5"
+  }
+}
