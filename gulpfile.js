@@ -2,6 +2,7 @@ var gulp            = require('gulp'),
     del             = require('del'),
     uglify          = require('gulp-uglify'),
     rename          = require('gulp-rename'),
+    less            = require('gulp-less'),
     concat          = require('gulp-concat'),
     filter          = require('gulp-filter'),
     bower           = require('gulp-bower'),
@@ -18,7 +19,7 @@ gulp.task('bower', function() {
 });
 
 gulp.task('clean', function (cb) {
-    del(['build/js'], cb);
+    del(['build/js', 'build/css'], cb);
 });
 
 // Compress JS
@@ -33,13 +34,22 @@ gulp.task('js', ['bower'], function() {
 });
 
 gulp.task('php', function() {
-    gulp.src('*.php')
+    gulp.src('src/*.php')
         .pipe(gulp.dest('./build'))
         .pipe(notify({ message: 'PHP task complete' }));
 });
 
-gulp.task('watch', function() {
-    gulp.watch('*.php', ['php']);
+gulp.task('less', function () {
+    gulp.src('src/less/main.less')
+        .pipe(less())
+        .pipe(concat('plugin.min.css'))
+        .pipe(gulp.dest('build/css'))
+        .pipe(notify({ message: 'Less task complete' }));
 });
 
-gulp.task('default', ['clean', 'js', 'php', 'watch']);
+gulp.task('watch', function() {
+    gulp.watch('src/*.php', ['php']);
+    gulp.watch('src/**/*.less', ['less']);
+});
+
+gulp.task('default', ['clean', 'js', 'php', 'less', 'watch']);
